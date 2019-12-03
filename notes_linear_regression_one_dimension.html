@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Burak Ç. Personal Website</title>
@@ -8,96 +9,248 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  </head>
-  <body style= "font-family: 'Oswald', sans-serif;">
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+    <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+</head>
 
-  
+<body style="font-family: 'Oswald', sans-serif;">
+
+
 
     <section class="hero is-link is-medium">
         <div class="hero-head">
-          <nav class="navbar">
-            <div class="container">
-              <div class="navbar-brand">
-                <a href="index.html"class="navbar-item">
-                    <p class="title is-1" style = "font-family: 'Oswald', sans-serif;
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="navbar-item">
+                            <p class="title is-1" style="font-family: 'Oswald', sans-serif;
                     ">Burak</p>
-                </a>
-                <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </span>
-              </div>
-              <div id="navbarMenuHeroB" class="navbar-menu">
-                  <div class="navbar-end">
-                      <a href="index.html"class="navbar-item">
-                        Home
-                      </a>
-                      <a href = "projects.html" class="navbar-item">
-                        Projects
-                      </a>
-                      <a href = "code.html"class="navbar-item">
-                        Code
-                      </a>
-                      <a href="notes.html"class="navbar-item is-active">
-                          Notes
                         </a>
-
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
                     </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.html" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="projects.html" class="navbar-item">
+                                Projects
+                            </a>
+                            <a href="code.html" class="navbar-item">
+                                Code
+                            </a>
+                            <a href="notes.html" class="navbar-item is-active">
+                                Notes
+                            </a>
 
-                  <div class="navbar-end">
-                      <div class="navbar-item">
-                        <div class="buttons">
-                          <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank" class="button is-info">
-                          <i class="fab fa-linkedin"></i>
-                      </a>
                         </div>
-                      </div>
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="buttons">
+                                    <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank"
+                                        class="button is-info">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-              </div>
-            </div>
-          </nav>
+                </div>
+            </nav>
         </div>
-      
+
         <div class="hero-body">
-          
-          <div class="container has-text-centered">
-            <p class="title">
-              Notes
-            </p>
-            <p class="subtitle">
-                You can find my notes on various subjects.
-            </p>
-          </div>
-          
-        </div>
-      
-      
-      </section>
-      <div class="columns">
-          <div class="column">
-          </div>
-          
+
+            <div class="container has-text-centered">
+                <p class="title">
+                    Notes
+                </p>
+                <p class="subtitle">
+                    You can find my notes on various subjects.
+                </p>
+            </div>
+
         </div>
 
-        <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
-                <ul>
-                  <li><a href="notes.html">Notes</a></li>
-                  <li class="is-active"><a href="notes_linear_regression_one_dimension.html" aria-current="page">Linear Regression in One-Dimension</a></li>
-                </ul>
-              </nav>
+
+    </section>
+    <div class="columns">
+        <div class="column">
+        </div>
+
+    </div>
+
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="notes.html">Notes</a></li>
+            <li class="is-active"><a href="notes_linear_regression_one_dimension.html" aria-current="page">Linear
+                    Regression in One-Dimension</a></li>
+        </ul>
+    </nav>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box" style="text-align: justify; text-justify: inter-word;">
+                <p class="title is-1">Linear Regression in One-Dimension</p>
+                <p class="subtitle">These notes are far from original. They are a collection of many educational videos,
+                    common knowledge and lecture notes. Especially the lectures of Andrew Ng are the greates reference I
+                    am
+                    using, and the lectures I recommend for anyone to use. The dataset we are using is that of Andrew
+                    Ng's
+                    course on coursera.</p>
+                <p class="title is-2">Model Representation</p>
+                <p>In a regression problem we are going to assume that we are presented with clean data. For simplicity
+                    and
+                    in order to develop intuition for the future models, we will be assuming a one dimensional model.
+                    Our data
+                    will be about housing prices. And our data will be the price of an apartment given the square meter
+                    area of
+                    the apartment. The number of data we have in this case will be called <b>training examples</b> $m$.
+                    The square
+                    meter value will be called <b>features</b> $x$. The price will be called <b>target</b> $y$.
+                    $$(x^{(i)},y^{(i)})$$ will be used to represent $i$th target and feature.</p>
 
 
-  </body>
 
-  <footer class="footer">
-      <div class="content has-text-centered">
+                <img src="image_linear_regression_one_dimension_scatter.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+                <p>This is the scatter graph of a sample data that is good for learning linear regression. For this
+                    data, we will come up with an <b>hypothesis</b>. This hypothesis will be in this case an equation of
+                    a line! Simply we want it to fit this data as much as possible. Then we need a way to measure how
+                    fit it is. Let $h(x)$ be our hypothesis. Since it needs to be a line, it will have the form:
+                    $$ h(x) = \theta_0 + \theta_1 x$$ where $\theta_i$'s are what we call <b>parameters</b>.In the
+                    housing prices case, our parameter is the square area of the apartment. </p>
+                <br>
+                <p class="title is-3">Cost Function</p>
+                <p>As we said we want to find out how fit our hypothesis is. Imagine our hypothesis is a line going
+                    through any direction of this graph. One way to do this is to look at the distance between each data
+                    point and the corresponding point of our hypothesis line. For example if at $x=30$, our data has a
+                    value $y=39$, and at the same $x$ value our hypothesis has $y=31$, then we will consider the
+                    distance between the two $y$ values. But let us not work with absolute values, so we can simply work
+                    with square of the distance instead.</p>
+                <p>Now, imagine doing this for each data point. In order to understand how fit our hypothesis is, the
+                    total of the distances will have to be as small as possible. So we simply add all these distances'
+                    squares. And this will be how we measure how fit our hypothesis is.</p>
+                <p>This is the idea of something very important in not only machine learning but also statistics too. It
+                    is called the <b>cost function</b>. Let us now write down mathematically what we meant above. First
+                    we substract one from the other,
+                    $$h(x^{(i)}-y^{(i)})$$ and then we take the square so that we have a clean positive value,
+                    $$h(x^{(i)}-y^{(i)})^2$$ Now we do this for all the data points and adding them all we will get,
+                    $$\sum_{i=1}^{m} h(x^{(i)}-y^{(i)})^2$$ One final touch is that conventionally for mathematical
+                    elegance we will add an unimportant factor of $\frac{1}{2m}$ in the beginning. Thus the final
+                    version of the cost function is:
+                    $$ J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m} h(x^{(i)}-y^{(i)})^2$$</p>
+                <p>Let us not forget the big picture. <b>We want to minimize the cost function.</b> Note that the value
+                    $m$ is the number of total data points therefore it is constant. The values of $y^{(i)}$ is the data
+                    points therefore it is not a parameter. So what needs to be done is to find a pair of
+                    $(\theta_0,\theta_1)$ that will minimize this function. Because these are the only values that are
+                    not known.</p>
+                <p class="title is-3">Gradient Descent</p>
+                <p>In order to numerically minimize the cost function, we will use the method of gradient descent. Basic
+                    idea is to start at one point, change it slightly to the decreasing direction; and check if it is
+                    minimized. The formula needed is the following formula repeated until we converge to the minimum:
+                    $$ \theta_i := \theta_i - \alpha \frac{\partial}{\partial \theta_{i}}J(\theta_0, \theta_1) $$ where
+                    $i=0,1$. This formula assures that when we update, it will go into the direction of the minimum. We
+                    need to be careful about the update. We need simultenious update of $\theta_0$ and $\theta_1$. The
+                    way to do that is the following:
+                    $$ temp0 = \theta_0 - \alpha \frac{\partial}{\partial \theta_0}J(\theta_0,\theta_1)$$
+                    $$ temp1 = \theta_1 - \alpha \frac{\partial}{\partial \theta_1}J(\theta_0,\theta_1)$$
+                    $$ \theta_0 = temp0$$
+                    $$ \theta_1 = temp1$$</p>
+                <p>The important point about this algorithm is:
+                    <div class="content">
+                        <ol type="i">
+                            <li>If $\alpha$ is too small then the algorithm will too much time to execute.</li>
+                            <li>If $\alpha$ is too big then it will overjump the minimum. It will never converge.</li>
+                            <li>If the initial point of the gradient descent is in fact the minimum, then we will not
+                                observe an update.</li>
+                            <li>As the derivative of the cost function will approach to zero, we don't need to update
+                                the coefficient $\alpha$. Nonetheless, we will take smaller steps overtime.</li>
+                            </ul>
+                </p>
+            </div>
+            <p class="title is-3">The Explicit Calculation of the Gradient Descent</p>
+            <p>The important part that needs explicit calculation is the derivative part. Let us take the derivative of
+                the cost function:
+                $$ \frac{\partial}{\partial \theta_i}J(\theta_0,\theta_1) = \frac{\partial}{\partial \theta_i} \big[
+                \frac{1}{2m} \sum_{j=1}^{m} (h(x^{(j)}) - y^{(j)})^2 \big]$$ For $i=0$ we have:
+                $$ \frac{\partial J}{\partial \theta_0} = \frac{1}{2m} 2 \big( \sum_{j=1}^{m} (\theta_0 + \theta_1
+                x^{(i)} - y^{(i)}) \big)$$ For $i=1$ we have:
+                $$ \frac{\partial J}{\partial \theta_1} = \frac{1}{2m} 2 \big( \sum_{j=1}^{m} (\theta_0 + \theta_1
+                x^{(i)} -y^{(i)})x^{(i)} \big)$$ More compactly we will have:
+                $$\frac{\partial J}{\partial \theta_0} = \frac{1}{m} \sum_{j=1}^{m} (h(x^{(i)})-y^{(i)})$$
+                $$\frac{\partial J}{\partial \theta_1} = \frac{1}{m} \sum_{j=1}^{m} (h(x^{(i)})-y^{(i)})x^{(i)}$$</p>
+            <p>Some important remarks are:
+                <div class="content">
+                    <ol type="i">
+                        <li>For linear regression, $J$ will always be convex therefore we don't need to worry about
+                            finding the maximum instead of minimum.</li>
+                        <li>For other types of cost functions, we always need to check the convexivity first. </li>
+                        <li>This is spesifically called the <b>batch gradient descent</b> as we are at each step, we are
+                            using the whole data.</li>
+                    </ol>
+                </div>
+            </p>
+
+        </div>
+    </div>
+
+
+    <div class="column is-narrow">
+        <div style="width: 200px;">
+            <p class="title is-5"></p>
+        </div>
+    </div>
+
+    </div>
+    <a href="#">
+        <div class="columns">
+            <div class="column is-narrow">
+                <div style="width: 200px;">
+                    <p class="title is-5"></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="box" style="text-align: justify; text-justify: inter-word;">
+                    <p class="title is-2">python implementation</p>
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-narrow">
+                <div style="width: 200px;">
+                    <p class="title is-5"></p>
+                </div>
+            </div>
+        </div>
+    </a>
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
         <p>
-          <strong>Burak Çivitcioğlu's personal website. 
+            <strong>Burak Çivitcioğlu's personal website.
         </p>
-      </div>
-    </footer>
+    </div>
+</footer>
+
 </html>
