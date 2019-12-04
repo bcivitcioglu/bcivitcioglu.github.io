@@ -130,10 +130,10 @@
                     Our data
                     will be about housing prices. And our data will be the price of an apartment given the square meter
                     area of
-                    the apartment. The number of data we have in this case will be called <b>training examples</b> $m$.
+                    the apartment. The number of data we have in this case will be called <b>training examples</b> m.
                     The square
-                    meter value will be called <b>features</b> $x$. The price will be called <b>target</b> $y$.
-                    $$(x^{(i)},y^{(i)})$$ will be used to represent $i$th target and feature.</p>
+                    meter value will be called <b>features</b> x. The price will be called <b>target</b> y.
+                    $$(x^{(i)},y^{(i)})$$ will be used to represent ith target and feature.</p>
 
 
 
@@ -143,16 +143,16 @@
                 <p>This is the scatter graph of a sample data that is good for learning linear regression. For this
                     data, we will come up with an <b>hypothesis</b>. This hypothesis will be in this case an equation of
                     a line! Simply we want it to fit this data as much as possible. Then we need a way to measure how
-                    fit it is. Let $h(x)$ be our hypothesis. Since it needs to be a line, it will have the form:
-                    $$ h(x) = \theta_0 + \theta_1 x$$ where $\theta_i$'s are what we call <b>parameters</b>.In the
+                    fit it is. Let a function depending on x be our hypothesis. Since it needs to be a line, it will have the form:
+                    $$ h(x) = \theta_0 + \theta_1 x$$ where $$\theta_i$$'s are what we call <b>parameters</b>.In the
                     housing prices case, our parameter is the square area of the apartment. </p>
                 <br>
                 <p class="title is-3">Cost Function</p>
                 <p>As we said we want to find out how fit our hypothesis is. Imagine our hypothesis is a line going
                     through any direction of this graph. One way to do this is to look at the distance between each data
-                    point and the corresponding point of our hypothesis line. For example if at $x=30$, our data has a
-                    value $y=39$, and at the same $x$ value our hypothesis has $y=31$, then we will consider the
-                    distance between the two $y$ values. But let us not work with absolute values, so we can simply work
+                    point and the corresponding point of our hypothesis line. For example if at x=30, our data has a
+                    value y=39, and at the same x value our hypothesis has y=31, then we will consider the
+                    distance between the two y values. But let us not work with absolute values, so we can simply work
                     with square of the distance instead.</p>
                 <p>Now, imagine doing this for each data point. In order to understand how fit our hypothesis is, the
                     total of the distances will have to be as small as possible. So we simply add all these distances'
@@ -163,21 +163,21 @@
                     $$h(x^{(i)}-y^{(i)})$$ and then we take the square so that we have a clean positive value,
                     $$h(x^{(i)}-y^{(i)})^2$$ Now we do this for all the data points and adding them all we will get,
                     $$\sum_{i=1}^{m} h(x^{(i)}-y^{(i)})^2$$ One final touch is that conventionally for mathematical
-                    elegance we will add an unimportant factor of $\frac{1}{2m}$ in the beginning. Thus the final
+                    elegance we will add an unimportant factor of $$\frac{1}{2m}$$ in the beginning. Thus the final
                     version of the cost function is:
                     $$ J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m} h(x^{(i)}-y^{(i)})^2$$</p>
                 <p>Let us not forget the big picture. <b>We want to minimize the cost function.</b> Note that the value
-                    $m$ is the number of total data points therefore it is constant. The values of $y^{(i)}$ is the data
+                    m is the number of total data points therefore it is constant. The values of $$y^{(i)}$$ are the data
                     points therefore it is not a parameter. So what needs to be done is to find a pair of
-                    $(\theta_0,\theta_1)$ that will minimize this function. Because these are the only values that are
+                    $$(\theta_0,\theta_1)$$ that will minimize this function. Because these are the only values that are
                     not known.</p>
                 <p class="title is-3">Gradient Descent</p>
                 <p>In order to numerically minimize the cost function, we will use the method of gradient descent. Basic
                     idea is to start at one point, change it slightly to the decreasing direction; and check if it is
                     minimized. The formula needed is the following formula repeated until we converge to the minimum:
                     $$ \theta_i := \theta_i - \alpha \frac{\partial}{\partial \theta_{i}}J(\theta_0, \theta_1) $$ where
-                    $i=0,1$. This formula assures that when we update, it will go into the direction of the minimum. We
-                    need to be careful about the update. We need simultenious update of $\theta_0$ and $\theta_1$. The
+                    i=0,1. This formula assures that when we update, it will go into the direction of the minimum. We
+                    need to be careful about the update. We need simultenious update of the parameters. The
                     way to do that is the following:
                     $$ temp0 = \theta_0 - \alpha \frac{\partial}{\partial \theta_0}J(\theta_0,\theta_1)$$
                     $$ temp1 = \theta_1 - \alpha \frac{\partial}{\partial \theta_1}J(\theta_0,\theta_1)$$
@@ -186,12 +186,12 @@
                 <p>The important point about this algorithm is:
                     <div class="content">
                         <ol type="i">
-                            <li>If $\alpha$ is too small then the algorithm will too much time to execute.</li>
-                            <li>If $\alpha$ is too big then it will overjump the minimum. It will never converge.</li>
+                            <li>If $$\alpha$$ is too small then the algorithm will too much time to execute.</li>
+                            <li>If $$\alpha$$ is too big then it will overjump the minimum. It will never converge.</li>
                             <li>If the initial point of the gradient descent is in fact the minimum, then we will not
                                 observe an update.</li>
                             <li>As the derivative of the cost function will approach to zero, we don't need to update
-                                the coefficient $\alpha$. Nonetheless, we will take smaller steps overtime.</li>
+                                the coefficient $$\alpha$$. Nonetheless, we will take smaller steps overtime.</li>
                             </ul>
                 </p>
             </div>
@@ -201,7 +201,7 @@
                 $$ \frac{\partial}{\partial \theta_i}J(\theta_0,\theta_1) = \frac{\partial}{\partial \theta_i} \big[
                 \frac{1}{2m} \sum_{j=1}^{m} (h(x^{(j)}) - y^{(j)})^2 \big]$$ For $i=0$ we have:
                 $$ \frac{\partial J}{\partial \theta_0} = \frac{1}{2m} 2 \big( \sum_{j=1}^{m} (\theta_0 + \theta_1
-                x^{(i)} - y^{(i)}) \big)$$ For $i=1$ we have:
+                x^{(i)} - y^{(i)}) \big)$$ For i=1 we have:
                 $$ \frac{\partial J}{\partial \theta_1} = \frac{1}{2m} 2 \big( \sum_{j=1}^{m} (\theta_0 + \theta_1
                 x^{(i)} -y^{(i)})x^{(i)} \big)$$ More compactly we will have:
                 $$\frac{\partial J}{\partial \theta_0} = \frac{1}{m} \sum_{j=1}^{m} (h(x^{(i)})-y^{(i)})$$
@@ -209,7 +209,7 @@
             <p>Some important remarks are:
                 <div class="content">
                     <ol type="i">
-                        <li>For linear regression, $J$ will always be convex therefore we don't need to worry about
+                        <li>For linear regression, the cost function will always be convex therefore we don't need to worry about
                             finding the maximum instead of minimum.</li>
                         <li>For other types of cost functions, we always need to check the convexivity first. </li>
                         <li>This is spesifically called the <b>batch gradient descent</b> as we are at each step, we are
