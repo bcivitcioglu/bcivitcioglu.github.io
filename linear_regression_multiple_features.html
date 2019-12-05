@@ -48,10 +48,10 @@
                             <a href="index.html" class="navbar-item">
                                 Home
                             </a>
-                            <a href="projects.html" class="navbar-item is-active">
+                            <a href="projects.html" class="navbar-item">
                                 Projects
                             </a>
-                            <a href="notes.html" class="navbar-item">
+                            <a href="notes.html" class="navbar-item is-active">
                                 Notes
                             </a>
 
@@ -79,27 +79,23 @@
 
             <div class="container has-text-centered">
                 <p class="title">
-                        <a href="https://github.com/bcivitcioglu/linear_regression_one_dimension" target="_blank"><button
-                            class="button is-link  is-large">python implementation of linear regression
-                            on github</button></a>
+                        Linear Regression with Multiple Features
                 </p>
-        
             </div>
 
         </div>
 
 
     </section>
+
     <br>
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
-            <li><a href="projects.html">Projects</a></li>
-            <li class="is-active"><a href="notes_linear_regression_one_dimension.html"
-                    aria-current="page">Implementation of Linear
-                    Regression in One-Dimension</a></li>
+            <li><a href="notes.html">Notes</a></li>
+            <li class="is-active"><a href="notes_linear_regression_multiple_features.html" aria-current="page">Linear
+                    Regression with Multiple Features</a></li>
         </ul>
     </nav>
-
     <div class="columns">
         <div class="column is-narrow">
             <div style="width: 200px;">
@@ -109,54 +105,52 @@
 
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
-
-                <img src="image_linear_regression_one_dimension_scatter.png"
+                 
+                    <img src="image_linear_regression_multiple_features.png"
                     style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-                <p class="title is-4">The link of the implementation written in python is below. </p>
-                <p>The end result plotted will be as below. As we can see the linear regression implemented in one
-                    dimension gives
-                    a result as we would expect. We also have the scikit-learn implementation for the same problem. We
-                    can see that
-                    all the job can be done with 2 lines of code with scikit-learn.
-                </p>
+                    <p>The above figure shows a system that would be suitable for linear regression
+                        with multiple features. We need to fit a linear hypothesis, in the case of 
+                        2 features it will be a plane, in the case of more features 
+                        it will be impossible to visualize yet it will be linear 
+                        algebraicly. We will have the following variables defined. We will have
+                        $$m, n, x^{(i)}, x_j^{(i)}$$
+                       as number of data, number of features, array of ith feature and value of the feature j in ith sample. Our hypothesis this time will be:
+                       $$h(x) = \theta_0 + \theta_1 x_1 + \dots + \theta_n x_n$$ We will define the following column vectors in order to make easy operations. </p>
+                       
+                     <p>  $$ x = \begin{bmatrix} 
+                    1  \\
+                    x_1 \\
+                    x_2 \\
+                    \dots \\
+                    x_n
+                    \end{bmatrix}, \theta = \begin{bmatrix} 
+                    \theta_0  \\
+                    \theta_1 \\
+                    \theta_2 \\
+                    \dots \\
+                    \theta_n
+                    \end{bmatrix}$$ Then we can define simply $$ h(x) = \theta^T x$$</p>
+                    <p>The cost function in this case will be denoted just the same as the cost function of the single feature linear regression.
+                                $$ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2$$ As the idea of gradient descent is exactly the same, we will have the derivative of the cost function as $$\frac{\partial J}{\partial \theta_j} = \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ From which we have the final algorithm for gradient descent with multiple features: 
+                                $$ \theta_j := \theta_j - \alpha \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}, j=0,1, \dots, n$$ repeated until convergence.</p>
 
-                <img src="image_linear_regression_one_dimension.png" alt="Placeholder image"
-                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
 
-            </div>
-        </div>
+                
+          
+     
 
-
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
-        </div>
-
-    </div>
-    <div class="columns">
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
-                <a href="https://github.com/bcivitcioglu/linear_regression_one_dimension" target="_blank"><button
-                        class="button is-link is-light is-large is-outlined">python implementation of linear regression
-                        on github</button></a>
-
-                </p>
-            </div>
-        </div>
-
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
         </div>
     </div>
+
+
+    <div class="column is-narrow">
+        <div style="width: 200px;">
+            <p class="title is-5"></p>
+        </div>
+    </div>
+
+    </div>
+
 </body>
 
 <footer class="footer">
