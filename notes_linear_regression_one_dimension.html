@@ -19,10 +19,9 @@
           }
         });
       </script>
-      
-      <script type="text/javascript"
-          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-      </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
 </head>
 
 <body style="font-family: 'Oswald', sans-serif;">
@@ -51,9 +50,6 @@
                             </a>
                             <a href="projects.html" class="navbar-item">
                                 Projects
-                            </a>
-                            <a href="code.html" class="navbar-item">
-                                Code
                             </a>
                             <a href="notes.html" class="navbar-item is-active">
                                 Notes
@@ -94,12 +90,8 @@
 
 
     </section>
-    <div class="columns">
-        <div class="column">
-        </div>
 
-    </div>
-
+    <br>
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
             <li><a href="notes.html">Notes</a></li>
@@ -143,7 +135,8 @@
                 <p>This is the scatter graph of a sample data that is good for learning linear regression. For this
                     data, we will come up with an <b>hypothesis</b>. This hypothesis will be in this case an equation of
                     a line! Simply we want it to fit this data as much as possible. Then we need a way to measure how
-                    fit it is. Let a function depending on x be our hypothesis. Since it needs to be a line, it will have the form:
+                    fit it is. Let a function depending on x be our hypothesis. Since it needs to be a line, it will
+                    have the form:
                     $$ h(x) = \theta_0 + \theta_1 x$$ where $$\theta_i$$'s are what we call <b>parameters</b>.In the
                     housing prices case, our parameter is the square area of the apartment. </p>
                 <br>
@@ -167,7 +160,8 @@
                     version of the cost function is:
                     $$ J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m} h(x^{(i)}-y^{(i)})^2$$</p>
                 <p>Let us not forget the big picture. <b>We want to minimize the cost function.</b> Note that the value
-                    m is the number of total data points therefore it is constant. The values of $$y^{(i)}$$ are the data
+                    m is the number of total data points therefore it is constant. The values of $$y^{(i)}$$ are the
+                    data
                     points therefore it is not a parameter. So what needs to be done is to find a pair of
                     $$(\theta_0,\theta_1)$$ that will minimize this function. Because these are the only values that are
                     not known.</p>
@@ -209,7 +203,8 @@
             <p>Some important remarks are:
                 <div class="content">
                     <ol type="i">
-                        <li>For linear regression, the cost function will always be convex therefore we don't need to worry about
+                        <li>For linear regression, the cost function will always be convex therefore we don't need to
+                            worry about
                             finding the maximum instead of minimum.</li>
                         <li>For other types of cost functions, we always need to check the convexivity first. </li>
                         <li>This is spesifically called the <b>batch gradient descent</b> as we are at each step, we are
@@ -238,8 +233,11 @@
             </div>
 
             <div class="column">
-                <div class="box" style="text-align: justify; text-justify: inter-word;">
-                    <p class="title is-2">python implementation</p>
+                <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
+                    <a href="https://github.com/bcivitcioglu/linear_regression_one_dimension" target="_blank"><button
+                            class="button is-link is-light is-large is-outlined">python implementation of linear
+                            regression on github</button></a>
+
                     </p>
                 </div>
             </div>
