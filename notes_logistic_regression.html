@@ -105,7 +105,7 @@
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
                  
-                    <img src="image_linear_regression_multiple_features.png"
+                    <img src="image_logistic_data.png"
                     style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
                     <p>The logistic regression is used to make classicfication. In this post, we will be investigating the two-level case meaning that we will have only two possible outputs: 0 or 1. For a discrete set of target we have
                             $$y \in \{0,1\}$$
@@ -142,7 +142,11 @@
                             $$ error(h(x),y) = -yln(h(x))-(1-y)ln(1-h(x))$$ Notice that this is in fact the entropy of a discrete two-level system found by using the micro-canonical partition function in statistical physics.</p>
                         <p>The same procedure of gradient descent algorithm will be used here. Yet as it is a little too tedious to take the derivative, instead of confusing the reader, I will give the derivative:
                             $$ \theta_j := \theta_j - \frac{\alpha}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ and we repeat this until convergence. Note that as it may seem exactly similar to the gradient descent procedure of multi-feature linear regression, it is not the same at all as the hypothesis function is different. Moreover, the vectorized version of this algorithm will be.
-                            $$ \theta := \theta - \frac{\alpha}{m}X^T(\sigma(X\theta)-y)$$</p>
+                            $$ \theta := \theta - \frac{\alpha}{m}X^T(\sigma(X\theta)-y)$$ When we apply this, we will find for this data, the following decision boundary. 
+                        The decision boundary, will be crucial to predict in which side our new predictions are going to be.</p>
+
+                    <img src="image_decision_boundary.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
                         <p class="title is-4">Remark</p>
                         <p>If we have a problem of overfitting, we can reduce the number of features or we can use regularization, which is the next topic.</p>
      
@@ -159,6 +163,29 @@
 
     </div>
 
+    <div class="columns">
+            <div class="column is-narrow">
+                <div style="width: 200px;">
+                    <p class="title is-5"></p>
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
+                    <a href="https://github.com/bcivitcioglu/logistic_regression" target="_blank"><button
+                            class="button is-link is-light is-large is-outlined">python implementation of logistic
+                            regression on github</button></a>
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="column is-narrow">
+                <div style="width: 200px;">
+                    <p class="title is-5"></p>
+                </div>
+            </div>
+        </div>
 </body>
 
 <footer class="footer">
