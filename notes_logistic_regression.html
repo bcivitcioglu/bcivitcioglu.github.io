@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burak Ç. Personal Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body style="font-family: 'Oswald', sans-serif;">
+
+
+
+    <section class="hero is-link is-medium">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="navbar-item">
+                            <p class="title is-1" style="font-family: 'Oswald', sans-serif;
+                    ">Burak</p>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.html" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="projects.html" class="navbar-item">
+                                Projects
+                            </a>
+                            <a href="notes.html" class="navbar-item is-active">
+                                Notes
+                            </a>
+
+                        </div>
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="buttons">
+                                    <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank"
+                                        class="button is-info">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+
+            <div class="container has-text-centered">
+                <p class="title">
+                        Introduction to Logistic Regression
+                </p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <br>
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="notes.html">Notes</a></li>
+            <li class="is-active"><a href="notes_linear_regression_multiple_features.html" aria-current="page">Introduction to Logistic Regression</a></li>
+        </ul>
+    </nav>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box" style="text-align: justify; text-justify: inter-word;">
+                 
+                    <img src="image_linear_regression_multiple_features.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    <p>The logistic regression is used to make classicfication. In this post, we will be investigating the two-level case meaning that we will have only two possible outputs: 0 or 1. For a discrete set of target we have
+                            $$y \in \{0,1\}$$
+                        In real life examples, this could mean many things. For example: having the size of the tumors as a feature, we may decide if the tumor is benign or not. Then our target is two-level: benign, or not.</p>
+                        <p>We want the hypothesis to be in the interval,
+                            $$ 0 \leq h(x) \leq 1$$ The following convention, although it is not used commonly as a first choice today, is the definition of an hypothesis, as a sigmoid function.
+                            $$ h(x) = \sigma(\theta^T x), \sigma(x) = \frac{1}{1+e^{-x}}$$
+                        In this formalism, we will have the hypothesis function interpreted as the estimated probability that y=1 on feature x. 
+                            $$h(x) = P(y=1|x;\theta)$$ </p>
+                        <p class="title is-4">Decision Boundary</p>
+                        <p>According to the above definition, we will predict y=1 whenever 
+                            $$h(x)\geq 0.5$$ But substituting for sigmoid function in the hypothesis, we then get
+                            $$ y=1 \rightarrow \theta^T x \geq 0$$ Similarly,
+                            $$ y=0 \rightarrow \theta^T x \leq 0$$ Note that at zero we don't have a prediction. Then by finding these relations, we can plot the decision boundary. It can be a line, or a non-linear shape. For instance for a polynomial set of features, we will get a polynomial inequality relation therefore a non-linear decision boundary such as an elipse or a circle.</p>
+                        <br>    
+                        <p class="title is-4">Cost Function</p>
+                        <p>The training set will be
+                            $$T = \{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\dots, (x^{(m)},y^{(m)})\}$$ The size of the training set is m. We similarly define 
+                            $$x = \begin{bmatrix} 
+                                            1  \\
+                                            x_1 \\
+                                            x_2 \\
+                                            \dots \\
+                                            x_n
+                                            \end{bmatrix}, \theta = \begin{bmatrix} 
+                                            \theta_0  \\
+                                            \theta_1 \\
+                                            \theta_2 \\
+                                            \dots \\
+                                            \theta_n
+                                            \end{bmatrix}, y=\{0,1\}$$ and we also have 
+                            $$ h(x) = \sigma(\theta^T x)$$ Now we will use the conventional cost function, note that there may be found other suitable cost functions. We will have 
+                            $$ J(\theta) = \frac{1}{m} \sum_{i=1}^{m} error(h(x^{(i)}),y^{(i)})$$ with the error function
+                            $$ error(h(x),y) = -yln(h(x))-(1-y)ln(1-h(x))$$ Notice that this is in fact the entropy of a discrete two-level system found by using the micro-canonical partition function in statistical physics.</p>
+                        <p>The same procedure of gradient descent algorithm will be used here. Yet as it is a little too tedious to take the derivative, instead of confusing the reader, I will give the derivative:
+                            $$ \theta_j := \theta_j - \frac{\alpha}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ and we repeat this until convergence. Note that as it may seem exactly similar to the gradient descent procedure of multi-feature linear regression, it is not the same at all as the hypothesis function is different. Moreover, the vectorized version of this algorithm will be.
+                            $$ \theta := \theta - \frac{\alpha}{m}X^T(\sigma(X\theta)-y)$$</p>
+                        <p class="title is-4">Remark</p>
+                        <p>If we have a problem of overfitting, we can reduce the number of features or we can use regularization, which is the next topic.</p>
+     
+
+        </div>
+    </div>
+
+
+    <div class="column is-narrow">
+        <div style="width: 200px;">
+            <p class="title is-5"></p>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Burak Çivitcioğlu's personal website.
+        </p>
+    </div>
+</footer>
+
+</html>
