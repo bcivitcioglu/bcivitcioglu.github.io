@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burak Ç. Personal Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body style="font-family: 'Oswald', sans-serif;">
+
+
+
+    <section class="hero is-link is-medium">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="navbar-item">
+                            <p class="title is-1" style="font-family: 'Oswald', sans-serif;
+                    ">Burak</p>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.html" class="navbar-item">
+                                Home
+                            </a>
+                            <a href="projects.html" class="navbar-item">
+                                Projects
+                            </a>
+                            <a href="notes.html" class="navbar-item is-active">
+                                Notes
+                            </a>
+
+                        </div>
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="buttons">
+                                    <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank"
+                                        class="button is-info">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div class="hero-body">
+
+            <div class="container has-text-centered">
+                <p class="title">
+                        Linear Regression with Multiple Features
+                </p>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <br>
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="notes.html">Notes</a></li>
+            <li class="is-active"><a href="notes_linear_regression_multiple_features.html" aria-current="page">Linear
+                    Regression with Multiple Features</a></li>
+        </ul>
+    </nav>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box" style="text-align: justify; text-justify: inter-word;">
+                 
+                    <img src="image_linear_regression_multiple_features.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    <p>The above figure shows a system that would be suitable for linear regression
+                        with multiple features. We need to fit a linear hypothesis, in the case of 
+                        2 features it will be a plane, in the case of more features 
+                        it will be impossible to visualize yet it will be linear 
+                        algebraicly. We will have the following variables defined. We will have
+                        $$m, n, x^{(i)}, x_j^{(i)}$$
+                       as number of data, number of features, array of ith feature and value of the feature j in ith sample. Our hypothesis this time will be:
+                       $$h(x) = \theta_0 + \theta_1 x_1 + \dots + \theta_n x_n$$ We will define the following column vectors in order to make easy operations. </p>
+                       
+                     <p>  $$ x = \begin{bmatrix} 
+                    1  \\
+                    x_1 \\
+                    x_2 \\
+                    \dots \\
+                    x_n
+                    \end{bmatrix}, \theta = \begin{bmatrix} 
+                    \theta_0  \\
+                    \theta_1 \\
+                    \theta_2 \\
+                    \dots \\
+                    \theta_n
+                    \end{bmatrix}$$ Then we can define simply $$ h(x) = \theta^T x$$</p>
+                    <p>The cost function in this case will be denoted just the same as the cost function of the single feature linear regression.
+                                $$ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2$$ As the idea of gradient descent is exactly the same, we will have the derivative of the cost function as $$\frac{\partial J}{\partial \theta_j} = \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ From which we have the final algorithm for gradient descent with multiple features: 
+                                $$ \theta_j := \theta_j - \alpha \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}, j=0,1, \dots, n$$ repeated until convergence.</p>
+
+
+                
+          
+     
+
+        </div>
+    </div>
+
+
+    <div class="column is-narrow">
+        <div style="width: 200px;">
+            <p class="title is-5"></p>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Burak Çivitcioğlu's personal website.
+        </p>
+    </div>
+</footer>
+
+</html>
