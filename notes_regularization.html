@@ -118,7 +118,8 @@
                     <img src="image_regularization.png"
                     style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
                     <p>Let us suppose that we have a quadratic hypothesis. We will assume that it works and that the fourth-degree polynomial model overfits. The idea of regularization is to compensate the possibility of overfitting by making the higher degrees really small so that they will not affect as much. In order to do this we will add a term into the cost function.
-                        $$ J(\theta) = \frac{1}{2m}\big[ \sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2 + \lambda \sum_{j=1}^{n}\theta_j^2 \big]$$ Here we have the sum over the parameters where n is the number of features.</p>
+                        $$ J = \frac{1}{2m}\big[ \sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2 + R(\theta) \big]$$ 
+                        $$ R(\theta) = \lambda \sum_{j=1}^{n}\theta_j^2$$Here we have the sum over the parameters where n is the number of features.</p>
                         <p class="title is-4">Remark</p>
                         <p>Note that $$\theta_0$$ will never be penalized by the regularization. In order to choose the two algorithm coefficients, we can follow the following relation: 
                         $$ 1 - \alpha \frac{\lambda}{m} < 1$$</p>

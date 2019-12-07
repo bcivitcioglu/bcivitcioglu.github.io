@@ -133,7 +133,7 @@
                         <br>    
                         <p class="title is-4">Cost Function</p>
                         <p>The training set will be
-                            $$T = \{(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),\dots, (x^{(m)},y^{(m)})\}$$ The size of the training set is m. We similarly define 
+                            $$T = \{(x^{(1)},y^{(1)}),\dots, (x^{(m)},y^{(m)})\}$$ The size of the training set is m. We similarly define 
                             $$x = \begin{bmatrix} 
                                             1  \\
                                             x_1 \\
@@ -149,7 +149,8 @@
                                             \end{bmatrix}, y=\{0,1\}$$ and we also have 
                             $$ h(x) = \sigma(\theta^T x)$$ Now we will use the conventional cost function, note that there may be found other suitable cost functions. We will have 
                             $$ J(\theta) = \frac{1}{m} \sum_{i=1}^{m} error(h(x^{(i)}),y^{(i)})$$ with the error function
-                            $$ error(h(x),y) = -yln(h(x))-(1-y)ln(1-h(x))$$ Notice that this is in fact the entropy of a discrete two-level system found by using the micro-canonical partition function in statistical physics.</p>
+                            $$ error(h(x),y)$$
+                            $$ = -yln(h(x))-(1-y)ln(1-h(x))$$ Notice that this is in fact the entropy of a discrete two-level system found by using the micro-canonical partition function in statistical physics.</p>
                         <p>The same procedure of gradient descent algorithm will be used here. Yet as it is a little too tedious to take the derivative, instead of confusing the reader, I will give the derivative:
                             $$ \theta_j := \theta_j - \frac{\alpha}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ and we repeat this until convergence. Note that as it may seem exactly similar to the gradient descent procedure of multi-feature linear regression, it is not the same at all as the hypothesis function is different. Moreover, the vectorized version of this algorithm will be.
                             $$ \theta := \theta - \frac{\alpha}{m}X^T(\sigma(X\theta)-y)$$ When we apply this, we will find for this data, the following decision boundary. 
