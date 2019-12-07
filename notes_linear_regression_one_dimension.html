@@ -73,6 +73,16 @@
                     </div>
                 </div>
             </nav>
+            <script type="text/javascript">
+                (function() {
+                  var burger = document.querySelector('.burger');
+                  var nav = document.querySelector('#'+burger.dataset.target);
+                  burger.addEventListener('click', function(){
+                    burger.classList.toggle('is-active');
+                    nav.classList.toggle('is-active');
+                  });
+                })();
+              </script>
         </div>
 
         <div class="hero-body">
@@ -232,8 +242,7 @@
             <div class="column">
                 <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
                     <a href="https://github.com/bcivitcioglu/linear_regression_one_dimension" target="_blank"><button
-                            class="button is-link is-light is-large is-outlined">python implementation of linear
-                            regression on github</button></a>
+                            class="button is-link is-light is-outlined">python implementation</button></a>
 
                     </p>
                 </div>
