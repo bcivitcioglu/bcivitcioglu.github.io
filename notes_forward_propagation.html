@@ -120,7 +120,8 @@
                         <p><img src="image_hidden_layer.png"
                                             style="  display: block; margin-left: auto; margin-right: auto; width: 50%;"> We will again be considering this architecture. We have:
                             $$ a_1^{(2)} = $$
-                            $$ \sigma(\theta_{10}^{(1)}x_0 + \theta_{11}^{(1)}) x_1 + \theta_{12}^{(1)} x_2 + \theta_{13}^{(1)} x_3) = \sigma(z_1^{(2)})$$ and similarly we have
+                            $$ \sigma(\theta_{10}^{(1)}x_0 + \theta_{11}^{(1)} x_1 + \theta_{12}^{(1)} x_2 + \theta_{13}^{(1)} x_3) $$
+                            $$ = \sigma(z_1^{(2)})$$ and similarly we have
                             $$ a_2^{(2)} = \sigma(z_2^{(2)}), a_3^{(2)} = \sigma(z_3^{(2)})$$ then in order to calculate the output we have these functions. Then:
                             $$ a_1^{(3)} = \sigma(z_1^{(3)})$$ Now we will define the vectorized variables for simplification. 
                             $$ x = \begin{bmatrix} 
@@ -147,7 +148,8 @@
                         -30 \\
                          20 \\
                          20
-                        \end{bmatrix} \rightarrow a_1^{(2)} = \sigma(-30+20x_1+20x_2)$$ Then we can write down the logic table.
+                        \end{bmatrix} $$
+                        $$ \rightarrow a_1^{(2)} = \sigma(-30+20x_1+20x_2)$$ Then we can write down the logic table.
                             <table class="table is-responsive is-bordered is-fullwidth">
                                 <thead>
                                     <th>x<sub>1</sub></th>
