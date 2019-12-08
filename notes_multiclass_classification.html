@@ -89,7 +89,7 @@
 
             <div class="container has-text-centered">
                 <p class="title">
-                    Introduction to Neural Networks
+                    Multiclass Classification
                 </p>
 
             </div>
@@ -103,8 +103,8 @@
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
             <li><a href="notes.html">Notes</a></li>
-            <li class="is-active"><a href="notes_introduction_neural_networks.html" aria-current="page">
-                    Introduction to Neural Networks</a></li>
+            <li class="is-active"><a href="notes_multiclass_classification.html" aria-current="page">
+                    Multiclass Classification</a></li>
         </ul>
     </nav>
     <div class="columns">
@@ -116,23 +116,19 @@
 
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
-    <img src="image_single_neuron.png"
-                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-    <p>This is the very basic architecture of a single neuron. In this picture, we will be calling the output layer, a neuron. A neuron will receive inputs from the previous layer, and it will make the inputs go through an <strong>activation function.</strong> The activation function can be chosen among many functions. For example we can go with the sigmoid activation function, hyperbolic tangent function or more commonly used, ReLU function. 
-    $$ h(x) = ReLU(x) = max(0,x) $$ or
-    $$ h(x) = \sigma(x) = \frac{1}{1+e^{-\theta^T x}}$$</p>
-    <p><img src="image_hidden_layer.png"
-                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-    This is a neural network with more complicated architecture. The layers between the input layer and the output layer are called <strong>hidden layers</strong>. We will define some terminology before we go deeper:
-    $$a_i^{(j)}$$ is the activation of unit i in layer j. For example the second layer third unit's activation function would be denoted as $$a_3^{(2)}$$ And moreover, we have the notion of weights. 
-    Weight matrices will be denoted as $$\theta^{(j)}$$ being the weights of maps from layer j to layer j+1. We will denote the input layers with x's, and hidden layers with a's. Note that there is a bias unit:
-    $$x_0 = 1$$ Let us give an example calculation of the layers of this neural network. For instance if we want to calculate the second layer first unit, we will do the following operation:
-    $$ a_1^{(2)} = $$
-    $$ \sigma(\theta_{10}^{(1)}x_0 + \theta_{11}^{(1)}) x_1 + \theta_{12}^{(1)} x_2 + \theta_{13}^{(1)} x_3)$$ and similarly the ouput layer will be: 
-    $$ a_1^{(3)} = $$
-    $$ \sigma(\theta_{10}^{(2)} a_0^{(2)} + \theta_{11}^{(2)} a_1^{(2)} + \theta_{12}^{(2)} a_2^{(2)} + \theta_{13}^{(2)} a_3^{(2)})$$ Therefore we can see that in order to calculate the output layer, we need all the values of the weights and all the values of the nodes of the hidden layers. Note that if the network's number of units in layer j is $$s_j$$ then we have the matrix $$\theta^{(j)} \rightarrow {s_j \times s_{j+1}}$$</p>
-    <p>Therefore in order to calculate the hypothesis, we need to calculate all the values of the nodes. They are defined by activation functions which depend on the weights. Therefore the thing we need to calculate here is the weights. Once we have all the weights, then we can succesfully calculate the hypothesis in the output layer. The way we calculate the weights is with forward and backward propagation. </p>
-
+                    <p class="title is-3">Multiclass Classification with Neural Networks</p>
+                    <p>When we have a problem of multiclass clasification, we will have the possible outcomes denoted as 
+                        $$ h(x) \approx  \begin{bmatrix} 
+                     0 \\
+                     0 \\
+                     1 \\
+                     0
+                    \end{bmatrix} = y^{(3)}$$ when we have the third outcome. So we will have a set of fundamental basis; and the dimension will be the number of possible outcomes. We want to generalize the cost function of logistic regression. In this case we will have more than one possible outcome. Therefore the cost functions type will be the same, but we will add more summations to cover all the possibilities. 
+                        $$ J(\theta) = \frac{1}{m}\big[ \sum_{i=1}^{m} \sum_{k=1}^K error(h(x))\big] + R(\theta)$$
+                        $$ error(h(x)) = y_k^{(i)}ln(h(x^{(i)}))_k +  $$
+                        $$ (1-y_k^{(i)})ln(1-h(x^{(i)})_k)$$
+                        $$ R(\theta) = \frac{\lambda}{2m} \sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_l +1} (\theta_{ji}^{(l)})^2$$ Where L is the total number of layers. With s<sub>l</sub> is the number of nodes in the layer l.</p>
+                       
             </div>
         </div>
 
@@ -153,8 +149,8 @@
 
         <div class="column">
             <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
-                <a href="notes_forward_propagation.html"><button
-                        class="button is-link is-light is-outlined">forward propagation</button></a>
+                <a href="#"><button
+                        class="button is-link is-light is-outlined">back propagation</button></a>
 
                 </p>
             </div>
