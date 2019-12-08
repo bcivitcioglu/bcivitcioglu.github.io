@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burak Ç. Personal Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+</head>
+
+<body style="font-family: 'Oswald', sans-serif;">
+
+
+
+    <section class="hero is-link is-medium">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href="index.html" class="navbar-item">
+                            <p class="title is-1" style="font-family: 'Oswald', sans-serif;
+                    ">Burak</p>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroB" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href="index.html" class="navbar-item">
+                                <i class="fas fa-home"></i>
+                            </a>
+                            <a href="projects.html" class="navbar-item">
+                                Projects
+                            </a>
+                            <a href="notes.html" class="navbar-item is-active">
+                                Notes
+                            </a>
+
+                        </div>
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="buttons">
+                                    <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank"
+                                        class="button is-info">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <script type="text/javascript">
+                (function () {
+                    var burger = document.querySelector('.burger');
+                    var nav = document.querySelector('#' + burger.dataset.target);
+                    burger.addEventListener('click', function () {
+                        burger.classList.toggle('is-active');
+                        nav.classList.toggle('is-active');
+                    });
+                })();
+            </script>
+        </div>
+
+        <div class="hero-body">
+
+            <div class="container has-text-centered">
+                <p class="title">
+                    Introduction to Neural Networks
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <br>
+    <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="notes.html">Notes</a></li>
+            <li class="is-active"><a href="notes_introduction_neural_networks.html" aria-current="page">
+                    Introduction to Neural Networks</a></li>
+        </ul>
+    </nav>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box" style="text-align: justify; text-justify: inter-word;">
+                <html>
+    <img src="image_single_neuron.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    <p>This is the very basic architecture of a single neuron. In this picture, we will be calling the output layer, a neuron. A neuron will receive inputs from the previous layer, and it will make the inputs go through an <strong>activation function.</strong> The activation function can be chosen among many functions. For example we can go with the sigmoid activation function, hyperbolic tangent function or more commonly used, ReLU function. 
+    $$ h(x) = ReLU(x) = max(0,x) $$ or
+    $$ h(x) = \sigma(x) = \frac{1}{1+e^{-\theta^T x}}$$</p>
+    <p><img src="image_hidden_layer.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+    This is a neural network with more complicated architecture. The layers between the input layer and the output layer are called <strong>hidden layers</strong>. We will define some terminology before we go deeper:
+    $$a_i^{(j)}$$ is the activation of unit i in layer j. For example the second layer third unit's activation function would be denoted as $$a_3^{(2)}$$ And moreover, we have the notion of weights. 
+    Weight matrices will be denoted as $$\theta^{(j)}$$ being the weights of maps from layer j to layer j+1. We will denote the input layers with x's, and hidden layers with a's. Note that there is a bias unit:
+    $$x_0 = 1$$ Let us give an example calculation of the layers of this neural network. For instance if we want to calculate the second layer first unit, we will do the following operation:
+    $$ a_1^{(2)} = $$
+    $$ \sigma(\theta_{10}^{(1)}x_0 + \theta_{11}^{(1)}) x_1 + \theta_{12}^{(1)} x_2 + \theta_{13}^{(1)} x_3)$$ and similarly the ouput layer will be: 
+    $$ a_1^{(3)} = $$
+    $$ \sigma(\theta_{10}^{(2)} a_0^{(2)} + \theta_{11}^{(2)} a_1^{(2)} + \theta_{12}^{(2)} a_2^{(2)} + \theta_{13}^{(2)} a_3^{(2)})$$ Therefore we can see that in order to calculate the output layer, we need all the values of the weights and all the values of the nodes of the hidden layers. Note that if the network's number of units in layer j is $$s_j$$ then we have the matrix $$\theta^{(j)} \rightarrow {s_j \times s_{j+1}}$$</p>
+    <p>Therefore in order to calculate the hypothesis, we need to calculate all the values of the nodes. They are defined by activation functions which depend on the weights. Therefore the thing we need to calculate here is the weights. Once we have all the weights, then we can succesfully calculate the hypothesis in the output layer. The way we calculate the weights is with forward and backward propagation. </p>
+</html>
+
+            </div>
+        </div>
+
+
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
+                <a href="#"><button
+                        class="button is-link is-light is-outlined">forward propagation</button></a>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Burak Çivitcioğlu's personal website.
+        </p>
+        <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank" class="button is-info">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</footer>
+
+</html>
