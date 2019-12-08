@@ -33,7 +33,7 @@
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a href="index.html" class="navbar-item">
+                        <a href="../index.html" class="navbar-item">
                             <p class="title is-1" style="font-family: 'Oswald', sans-serif;
                     ">Burak</p>
                         </a>
@@ -45,13 +45,13 @@
                     </div>
                     <div id="navbarMenuHeroB" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="index.html" class="navbar-item">
+                            <a href="../index.html" class="navbar-item">
                                     <i class="fas fa-home"></i>
                             </a>
-                            <a href="projects.html" class="navbar-item">
+                            <a href="../projects.html" class="navbar-item is-active">
                                 Projects
                             </a>
-                            <a href="notes.html" class="navbar-item is-active">
+                            <a href="../notes.html" class="navbar-item">
                                 Notes
                             </a>
 
@@ -88,23 +88,27 @@
         <div class="hero-body">
 
             <div class="container has-text-centered">
-                <p class="title">
-                        Regularization
-                </p>
+                    <a href="https://github.com/bcivitcioglu/logistic_regression" target="_blank"><p class="title">
+                        python implementation of logistic regression
+                            on github
+                </p></a>
+        
             </div>
 
         </div>
 
 
     </section>
-
     <br>
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
-            <li><a href="notes.html">Notes</a></li>
-            <li class="is-active"><a href="notes_regularization.html" aria-current="page">Regularization</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li class="is-active"><a href="../projects/implementation_logistic_regression.html"
+                    aria-current="page">Implementation of Logistic
+                    Regression</a></li>
         </ul>
     </nav>
+
     <div class="columns">
         <div class="column is-narrow">
             <div style="width: 200px;">
@@ -114,29 +118,50 @@
 
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
-                 
-                    <img src="image_regularization.png"
+
+                <img src="../images/image_logistic_data.png"
                     style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-                    <p>Let us suppose that we have a quadratic hypothesis. We will assume that it works and that the fourth-degree polynomial model overfits. The idea of regularization is to compensate the possibility of overfitting by making the higher degrees really small so that they will not affect as much. In order to do this we will add a term into the cost function.
-                        $$ J = \frac{1}{2m}\big[ \sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2 + R(\theta) \big]$$ 
-                        $$ R(\theta) = \lambda \sum_{j=1}^{n}\theta_j^2$$Here we have the sum over the parameters where n is the number of features.</p>
-                        <p class="title is-4">Remark</p>
-                        <p>Note that $$\theta_0$$ will never be penalized by the regularization. In order to choose the two algorithm coefficients, we can follow the following relation: 
-                        $$ 1 - \alpha \frac{\lambda}{m} < 1$$</p>
+                <p class="title is-4">The link of the implementation written in python is below. </p>
+                <p>The end result plotted will be as below. As we can see the logistic regression implemented in one
+                    dimension gives
+                    a result as we would expect. Once we have the decision boundary, we will start making predictions easily.               </p>
 
+                <img src="../images/image_decision_boundary.png" alt="Placeholder image"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+
+            </div>
+        </div>
+
+
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+    </div>
+    <div class="columns">
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
+                <a href="https://github.com/bcivitcioglu/logistic_regression" target="_blank"><button
+                        class="button is-link is-light is-outlined">python implementation</button></a>
+
+                </p>
+            </div>
+        </div>
+
+        <div class="column is-narrow">
+            <div style="width: 200px;">
+                <p class="title is-5"></p>
+            </div>
         </div>
     </div>
-
-
-    <div class="column is-narrow">
-        <div style="width: 200px;">
-            <p class="title is-5"></p>
-        </div>
-    </div>
-
-    </div>
-
-  
 </body>
 
 <footer class="footer">

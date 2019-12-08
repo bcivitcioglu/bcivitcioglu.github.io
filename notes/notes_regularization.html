@@ -33,7 +33,7 @@
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a href="index.html" class="navbar-item">
+                        <a href="../index.html" class="navbar-item">
                             <p class="title is-1" style="font-family: 'Oswald', sans-serif;
                     ">Burak</p>
                         </a>
@@ -45,13 +45,13 @@
                     </div>
                     <div id="navbarMenuHeroB" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="index.html" class="navbar-item">
-                                <i class="fas fa-home"></i>
+                            <a href="../index.html" class="navbar-item">
+                                    <i class="fas fa-home"></i>
                             </a>
-                            <a href="projects.html" class="navbar-item">
+                            <a href="../projects.html" class="navbar-item">
                                 Projects
                             </a>
-                            <a href="notes.html" class="navbar-item is-active">
+                            <a href="../notes.html" class="navbar-item is-active">
                                 Notes
                             </a>
 
@@ -74,24 +74,23 @@
                 </div>
             </nav>
             <script type="text/javascript">
-                (function () {
-                    var burger = document.querySelector('.burger');
-                    var nav = document.querySelector('#' + burger.dataset.target);
-                    burger.addEventListener('click', function () {
-                        burger.classList.toggle('is-active');
-                        nav.classList.toggle('is-active');
-                    });
+                (function() {
+                  var burger = document.querySelector('.burger');
+                  var nav = document.querySelector('#'+burger.dataset.target);
+                  burger.addEventListener('click', function(){
+                    burger.classList.toggle('is-active');
+                    nav.classList.toggle('is-active');
+                  });
                 })();
-            </script>
+              </script>
         </div>
 
         <div class="hero-body">
 
             <div class="container has-text-centered">
                 <p class="title">
-                    Multiclass Classification
+                        Regularization
                 </p>
-
             </div>
 
         </div>
@@ -102,9 +101,8 @@
     <br>
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
-            <li><a href="notes.html">Notes</a></li>
-            <li class="is-active"><a href="notes_multiclass_classification.html" aria-current="page">
-                    Multiclass Classification</a></li>
+            <li><a href="../notes.html">Notes</a></li>
+            <li class="is-active"><a href="../notes/notes_regularization.html" aria-current="page">Regularization</a></li>
         </ul>
     </nav>
     <div class="columns">
@@ -116,53 +114,29 @@
 
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
-                    <p class="title is-3">Multiclass Classification with Neural Networks</p>
-                    <p>When we have a problem of multiclass clasification, we will have the possible outcomes denoted as 
-                        $$ h(x) \approx  \begin{bmatrix} 
-                     0 \\
-                     0 \\
-                     1 \\
-                     0
-                    \end{bmatrix} = y^{(3)}$$ when we have the third outcome. So we will have a set of fundamental basis; and the dimension will be the number of possible outcomes. We want to generalize the cost function of logistic regression. In this case we will have more than one possible outcome. Therefore the cost functions type will be the same, but we will add more summations to cover all the possibilities. 
-                        $$ J(\theta) = \frac{1}{m}\big[ \sum_{i=1}^{m} \sum_{k=1}^K error(h(x))\big] + R(\theta)$$
-                        $$ error(h(x)) = y_k^{(i)}ln(h(x^{(i)}))_k +  $$
-                        $$ (1-y_k^{(i)})ln(1-h(x^{(i)})_k)$$
-                        $$ R(\theta) = \frac{\lambda}{2m} \sum_{l=1}^{L-1} \sum_{i=1}^{s_l} \sum_{j=1}^{s_l +1} (\theta_{ji}^{(l)})^2$$ Where L is the total number of layers. With s<sub>l</sub> is the number of nodes in the layer l.</p>
-                       
-            </div>
-        </div>
+                 
+                    <img src="../images/image_regularization.png"
+                    style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
+                    <p>Let us suppose that we have a quadratic hypothesis. We will assume that it works and that the fourth-degree polynomial model overfits. The idea of regularization is to compensate the possibility of overfitting by making the higher degrees really small so that they will not affect as much. In order to do this we will add a term into the cost function.
+                        $$ J = \frac{1}{2m}\big[ \sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2 + R(\theta) \big]$$ 
+                        $$ R(\theta) = \lambda \sum_{j=1}^{n}\theta_j^2$$Here we have the sum over the parameters where n is the number of features.</p>
+                        <p class="title is-4">Remark</p>
+                        <p>Note that $$\theta_0$$ will never be penalized by the regularization. In order to choose the two algorithm coefficients, we can follow the following relation: 
+                        $$ 1 - \alpha \frac{\lambda}{m} < 1$$</p>
 
-
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
-        </div>
-
-    </div>
-    <div class="columns">
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
-        </div>
-
-        <div class="column">
-            <div class="box has-text-centered" style="text-align: justify; text-justify: inter-word;">
-                <a href="#"><button
-                        class="button is-link is-light is-outlined">back propagation</button></a>
-
-                </p>
-            </div>
-        </div>
-
-        <div class="column is-narrow">
-            <div style="width: 200px;">
-                <p class="title is-5"></p>
-            </div>
         </div>
     </div>
 
+
+    <div class="column is-narrow">
+        <div style="width: 200px;">
+            <p class="title is-5"></p>
+        </div>
+    </div>
+
+    </div>
+
+  
 </body>
 
 <footer class="footer">
@@ -172,10 +146,10 @@
         </p>
         <a href="https://github.com/bcivitcioglu" target="_blank" class="button is-primary">
             <i class="fab fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank" class="button is-info">
+          </a>
+          <a href="https://www.linkedin.com/in/burakcivitcioglu/" target="_blank" class="button is-info">
             <i class="fab fa-linkedin"></i>
-        </a>
+          </a>
     </div>
 </footer>
 

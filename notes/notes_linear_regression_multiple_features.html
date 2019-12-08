@@ -33,7 +33,7 @@
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a href="index.html" class="navbar-item">
+                        <a href="../index.html" class="navbar-item">
                             <p class="title is-1" style="font-family: 'Oswald', sans-serif;
                     ">Burak</p>
                         </a>
@@ -45,13 +45,13 @@
                     </div>
                     <div id="navbarMenuHeroB" class="navbar-menu">
                         <div class="navbar-end">
-                            <a href="index.html" class="navbar-item">
+                            <a href="../index.html" class="navbar-item">
                                     <i class="fas fa-home"></i>
                             </a>
-                            <a href="projects.html" class="navbar-item">
+                            <a href="../projects.html" class="navbar-item">
                                 Projects
                             </a>
-                            <a href="notes.html" class="navbar-item is-active">
+                            <a href="../notes.html" class="navbar-item is-active">
                                 Notes
                             </a>
 
@@ -89,7 +89,7 @@
 
             <div class="container has-text-centered">
                 <p class="title">
-                        Feature Scaling
+                        Linear Regression with Multiple Features
                 </p>
             </div>
 
@@ -101,8 +101,9 @@
     <br>
     <nav class="breadcrumb is-centered" aria-label="breadcrumbs">
         <ul>
-            <li><a href="notes.html">Notes</a></li>
-            <li class="is-active"><a href="notes_linear_regression_multiple_features.html" aria-current="page">Feature Scaling</a></li>
+            <li><a href="../notes.html">Notes</a></li>
+            <li class="is-active"><a href="../notes/notes_linear_regression_multiple_features.html" aria-current="page">Linear
+                    Regression with Multiple Features</a></li>
         </ul>
     </nav>
     <div class="columns">
@@ -114,19 +115,40 @@
 
         <div class="column">
             <div class="box" style="text-align: justify; text-justify: inter-word;">
-                    <img src="image_feature_scaling.png"
+                 
+                    <img src="../images/image_linear_regression_multiple_features.png"
                     style="  display: block; margin-left: auto; margin-right: auto; width: 50%;">
-                    <p>For example let us assume that our data set consists of two features. 
-                            $$ x_1 \in [ 0, 4000], x_2 \in [1,5]$$ This is the idea of feature scaling. We want them to be in the same scale so that our algorithm can work better. If we draw the cost function without scaling, we will get the eliptic version. With the appropriate scaling, we will get the circle version. It will make the steps less complicated to calculate.</p>
-                        <p>We will have
-                            $$ x_j^{scaled} = \frac{x_j^{(i)}}{max{(x_1)}}$$ For all the values in each feature.</p>
-                        <p>Ideally it is a good idea to put them all into the range:
-                            $$ [-1,1]$$</p>
-                        <p class = "title is-4">Mean Normalization</p>
-                        <p>In mean normalization we have a simple formula too. This case we will be scaling with respect to the average of all the values of a feature. 
-                            $$x_j^{scaled} = \frac{x_j-average(x_j)}{max(x_j)-min(x_j)}$$ </p>
-                        <p class="title is-4">Remark</p>
-                        <p>In order to make sure that the gradient descent is working, we can plot the cost function. We expect the cost function to decrease over time. We can declare convergence if the cost function decreases less than some small number we fixed.</p>
+                    <p>The above figure shows a system that would be suitable for linear regression
+                        with multiple features. We need to fit a linear hypothesis, in the case of 
+                        2 features it will be a plane, in the case of more features 
+                        it will be impossible to visualize yet it will be linear 
+                        algebraicly. We will have the following variables defined. We will have
+                        $$m, n, x^{(i)}, x_j^{(i)}$$
+                       as number of data, number of features, array of ith feature and value of the feature j in ith sample. Our hypothesis this time will be:
+                       $$h(x) = \theta_0 + \theta_1 x_1 + \dots + \theta_n x_n$$ We will define the following column vectors in order to make easy operations. </p>
+                       
+                     <p>  $$ x = \begin{bmatrix} 
+                    1  \\
+                    x_1 \\
+                    x_2 \\
+                    \dots \\
+                    x_n
+                    \end{bmatrix}, \theta = \begin{bmatrix} 
+                    \theta_0  \\
+                    \theta_1 \\
+                    \theta_2 \\
+                    \dots \\
+                    \theta_n
+                    \end{bmatrix}$$ Then we can define simply $$ h(x) = \theta^T x$$</p>
+                    <p>The cost function in this case will be denoted just the same as the cost function of the single feature linear regression.
+                                $$ J(\theta) = \frac{1}{2m}\sum_{i=1}^{m} (h(x^{(i)})-y^{(i)})^2$$ As the idea of gradient descent is exactly the same, we will have the derivative of the cost function as $$\frac{\partial J}{\partial \theta_j} = \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ From which we have the final algorithm for gradient descent with multiple features: 
+                                $$ \theta_j := $$
+                                $$ \theta_j - \alpha \frac{1}{m}\sum_{i=1}^{m}(h(x^{(i)})-y^{(i)})x_j^{(i)}$$ repeated until convergence.</p>
+
+
+                
+          
+     
 
         </div>
     </div>
