@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+    
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,20 +25,17 @@
               <p class="title is-1" style="font-family: 'Brush Script MT', sans-serif;
                     ">Burak Çivitcioğlu</p>
             </a>
-            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
           </div>
           <div id="navbarMenuHeroB" class="navbar-menu">
             <div class="navbar-end">
-              <a href="index.html" class="navbar-item is-active">
-                <i class="fas fa-home"></i>
+              <a href="index.html" class="navbar-item">
+                  <i class="fas fa-home"></i>
               </a>
-              <a href="publications.html" class="navbar-item">
+              <a href="publications.html" class="navbar-item is-active">
                 Publications
               </a>
+
+      
 
             </div>
 
@@ -57,10 +55,10 @@
         </div>
       </nav>
       <script type="text/javascript">
-        (function () {
+        (function() {
           var burger = document.querySelector('.burger');
-          var nav = document.querySelector('#' + burger.dataset.target);
-          burger.addEventListener('click', function () {
+          var nav = document.querySelector('#'+burger.dataset.target);
+          burger.addEventListener('click', function(){
             burger.classList.toggle('is-active');
             nav.classList.toggle('is-active');
           });
@@ -72,10 +70,7 @@
 
       <div class="container has-text-centered">
         <p class="title">
-          Welcome, I am Burak Çivitcioğlu
-        </p>
-        <p class="subtitle">
-          firstname.lastname[at]cyu.fr
+          Publications
         </p>
       </div>
 
@@ -88,27 +83,60 @@
   <div class="tile is-ancestor">
     <div class="tile is-vertical">
       <div class="tile">
+ 
+
         <div class="tile is-parent is-vertical">
           <article class="tile is-child notification box">
-            <p class="title">A Physicist</p>
-            <p class="subtitle">I am a Ph.D. candidate in physics in CY Cergy-Paris Université. 
-            </p>
+            <a href="https://iopscience.iop.org/article/10.1088/1742-6596/2207/1/012058/meta", target="_blank", style="text-decoration: none">
+              <div class="card">
+          
+                <div class="card-content">
+                  <div class="content">
+                    <p class="title is-4">1 - Machine Learning the Square-Lattice Ising Model </p>
+                    <p align="justify"> Abstract:
+                      Recently, machine-learning methods have been shown to be successful in identifying and classifying different phases of the square-lattice Ising model. We study the performance and limits of classification and regression models. In particular, we investigate how accurately the correlation length, energy and magnetisation can be recovered from a given configuration. We find that a supervised learning study of a regression model yields good predictions for magnetisation and energy, and acceptable predictions for the correlation length.
+                    </p>
+                    <p>Burak Çivitcioğlu et al 2022 J. Phys.: Conf. Ser. 2207 012058</p>
+
+                  </div>
+                </div>
+              </div>
+            </a>
           </article>
         </div>
+
+
         <div class="tile is-parent is-vertical">
           <article class="tile is-child notification box">
-            <p class="title">Machine Learning Research</p>
-            <p class="subtitle">I work on machine learning applications to condensed matter problems such as Ising-like spin systems systems phase classification
-              using deep learning, regression studies on physical quantities and unsupervised learning using variational autoencoders.
-            </p>
+
+            <a href="projects/implementation_linear_regression_one_dimension.html" style="text-decoration: none">
+              <div class="card">
+     
+
+
+                <div class="card-content">
+                  <div class="content">
+                    <p class="title is-4">2 - Reconstruction of the Phase Diagram of J1J2 Ising Model using Unsupervised Machine Learning (and without Neural Networks)</p>
+                    <p> To be published. </p>
+
+                  </div>
+                </div>
+              </div>
+            </a>
+
+
+
           </article>
         </div>
+
 
       </div>
 
     </div>
 
   </div>
+
+
 
 
 </body>
