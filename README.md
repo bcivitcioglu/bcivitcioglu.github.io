@@ -1,4 +1,5 @@
-This is the [website](https://bcivitcioglu.github.io) link 
+This is the [website](https://bcivitcioglu.github.io) link, take a look!
+
 I'm a Ph.D. Candidate in Machine Learning, passionate about AI. My research so far focused on applying machine learning techniques to classical spin systems. 
 
 ⚡ I'm always up for: AI, barbecue, and the Mediterranean. 
